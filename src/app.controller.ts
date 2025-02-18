@@ -8,6 +8,7 @@ export class AppController {
   @Get()
   getHello(): string {
     console.log(`PROCESS ENV`, process.env.APP);
+    console.log(`SECRET ENV`, process.env.API_KEY);
     return this.appService.getHello();
   }
 
