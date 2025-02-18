@@ -5,7 +5,12 @@ metadata:
   name: kubernetes-api
   
 spec:
-  replicas: 2
+  replicas: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 1
   selector:
     matchLabels:
       api: kubernetes-api
@@ -16,8 +21,8 @@ spec:
     spec:
       containers:
       - name: kubernetes-api
-        image: geraldobl58/kubernetes-api:v1
-        imagePullPolicy: Always
+        image: geraldobl58/kubernetes-api:v2
+        imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 3000
         resources:
