@@ -6,7 +6,11 @@ export class AppService {
     return 'Hello World!';
   }
 
-  getKubernetes(): string {
-    return 'Hello Kubernetes!';
+  getVersionTwo(): string {
+    return 'Hello Version V2';
+  }
+
+  getVersionThree(): string {
+    return 'Hello Version V3';
   }
 }

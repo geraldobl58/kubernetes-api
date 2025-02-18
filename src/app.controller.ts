@@ -7,11 +7,17 @@ export class AppController {
 
   @Get()
   getHello(): string {
+    console.log(process.env.APP);
     return this.appService.getHello();
   }
 
-  @Get('/k8s')
-  getKubernetes(): string {
-    return this.appService.getKubernetes();
+  @Get('/v2')
+  getVersionTwo(): string {
+    return this.appService.getVersionTwo();
+  }
+
+  @Get('/v3')
+  getVersionThree(): string {
+    return this.appService.getVersionThree();
   }
 }
