@@ -17,6 +17,7 @@ spec:
       containers:
       - name: kubernetes-api
         image: geraldobl58/kubernetes-api:v1
+        imagePullPolicy: Always
         ports:
           - containerPort: 3000
         resources:
