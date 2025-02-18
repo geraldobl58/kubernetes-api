@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: kubernetes-api
+  
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      api: kubernetes-api
+  template:
+    metadata:
+      labels:
+        api: kubernetes-api
+    spec:
+      containers:
+      - name: kubernetes-api
+        image: geraldobl58/kubernetes-api:v1
+        ports:
+          - containerPort: 3000
+        resources:
+          requests:
+            cpu: 100m
+            memory: 64Mi
+          limits:
+            cpu: 200m
+            memory: 128Mi
