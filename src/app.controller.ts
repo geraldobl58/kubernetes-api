@@ -9,4 +9,9 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('/k8s')
+  getKubernetes(): string {
+    return this.appService.getKubernetes();
+  }
 }
